@@ -4,15 +4,26 @@ const bodyParser=require('body-parser');
 const path=require('path');
 var passport = require('passport');
 var authenticate = require('./authenticate');
-
+require('dotenv').config();
 
 // Loading routers
 const productRouter = require('./routes/api/productRouter');
 const userRouter = require('./routes/api/userRouter');
 const bidRouter = require('./routes/api/bidRouter');
 var favoriteRouter = require('./routes/api/favoriteRouter');
+const ask = require('./routes/api/ask');
+
+  DEFAULT_BODY_SIZE_LIMIT = 1024 * 1024 * 10,
+  DEFAULT_PARAMETER_LIMIT = 10000;
+
+const bodyParserJsonConfig = () => ({
+    parameterLimit: DEFAULT_PARAMETER_LIMIT,
+    limit: DEFAULT_BODY_SIZE_LIMIT
+ });
 
 const app= express();
+
+app.use(bodyParser.json(bodyParserJsonConfig()));
 
 app.use(function(req, res, next) {
 
@@ -39,9 +50,11 @@ app.use(passport.initialize());
 
 // Use routes
 app.use('/api/products',productRouter);
+
 app.use('/api/users',userRouter);
 app.use('/api/bids',bidRouter);
 app.use('/api/favorites',favoriteRouter);
+app.use('/api/',ask);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
