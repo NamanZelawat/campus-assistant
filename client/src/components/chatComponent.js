@@ -72,7 +72,7 @@ class Chat extends Component {
         // // return )
       })
       .catch(error => {
-        alert("Product could not be bidd\nError: " + error.message + "\n");
+        alert("\nError: " + error.message + "\n");
       });
   };
   render() {
