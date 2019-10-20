@@ -18,8 +18,41 @@ class App extends Component {
   handleNewUserMessage = newMessage => {
     console.log(`New message incoming! ${newMessage}`);
     // Now send the message throught the backend API
+    this.postMes(newMessage);
   };
 
+  postMes = (text) => {
+    const newBid = {
+      input: text
+    };
+   return fetch(baseUrl + 'ask', {
+        method: "POST",
+        body: JSON.stringify(newBid),
+        headers: {
+          "Content-Type": "application/json",
+          // 'Authorization': bearer
+        }
+        ,        credentials: "same-origin"
+    })
+    .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          var error = new Error('Error ' + response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      error => {
+            throw error;
+      })
+    .then(response => response.json())
+    .then(response => {     addResponseMessage(response.result.output.generic.response_type==="text"?response.result.output.generic.text:("View this image : "+response.result.output.generic.source));
+      // return )
+    })
+    .catch(error =>  {
+      alert('Product could not be bidd\nError: '+error.message+'\n'); });
+};
   render() {
     return (
       <div className="App">
