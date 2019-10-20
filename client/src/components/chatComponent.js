@@ -3,12 +3,13 @@ import {
   Widget,
   addResponseMessage,
   addLinkSnippet,
+  renderCustomComponent,
   addUserMessage
 } from "react-chat-widget";
 
 import "react-chat-widget/lib/styles.css";
 
-import {baseUrl} from '../redux/baseUrl';
+import { baseUrl } from "../redux/baseUrl";
 
 import logo from "../images/avatar.jpeg";
 
@@ -23,41 +24,57 @@ class Chat extends Component {
     this.postMes(newMessage);
   };
 
-  postMes = (text) => {
+  postMes = text => {
     const newBid = {
       input: text
     };
-   return fetch(baseUrl + 'ask', {
-        method: "POST",
-        body: JSON.stringify(newBid),
-        headers: {
-          "Content-Type": "application/json",
-          // 'Authorization': bearer
-        }
-        ,        credentials: "same-origin"
+    return fetch(baseUrl + "ask", {
+      method: "POST",
+      body: JSON.stringify(newBid),
+      headers: {
+        "Content-Type": "application/json"
+        // 'Authorization': bearer
+      },
+      credentials: "same-origin"
     })
-    .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          var error = new Error('Error ' + response.status + ': ' + response.statusText);
-          error.response = response;
+      .then(
+        response => {
+          if (response.ok) {
+            return response;
+          } else {
+            var error = new Error(
+              "Error " + response.status + ": " + response.statusText
+            );
+            error.response = response;
+            throw error;
+          }
+        },
+        error => {
           throw error;
         }
-      },
-      error => {
-            throw error;
-      })
-    .then(response => response.json())
+      )
+      .then(response => response.json())
 
-    .then(response => {    
-      console.log(response.result);
-       addResponseMessage(response.result.output.generic[0].response_type==="text"?response.result.output.generic[0].text:("View this image : "+response.result.output.generic[0].source));
-      // return )
-    })
-    .catch(error =>  {
-      alert('Product could not be bidd\nError: '+error.message+'\n'); });
-};
+      .then(response => {
+        console.log(response.result);
+        if (response.result.output.generic[0].response_type === "text") {
+          addResponseMessage(response.result.output.generic[0].text);
+        } else {
+          renderCustomComponent(() => (
+            <img src={response.result.output.generic[0].source} />
+          ));
+        }
+        // addResponseMessage(
+        //   response.result.output.generic[0].response_type === "text"
+        //     ? response.result.output.generic[0].text
+        //     : "View this image : " +
+        // );
+        // // return )
+      })
+      .catch(error => {
+        alert("Product could not be bidd\nError: " + error.message + "\n");
+      });
+  };
   render() {
     return (
       <div className="App">
