@@ -8,11 +8,13 @@ import {
 
 import "react-chat-widget/lib/styles.css";
 
+import {baseUrl} from '../redux/baseUrl';
+
 import logo from "../images/avatar.jpeg";
 
 class Chat extends Component {
   componentDidMount() {
-    addResponseMessage("Welcome to this awesome chat!");
+    // addResponseMessage("Welcome to this awesome chat!");
   }
 
   handleNewUserMessage = newMessage => {
@@ -59,8 +61,8 @@ class Chat extends Component {
         <Widget
           handleNewUserMessage={this.handleNewUserMessage}
           profileAvatar={logo}
-          title="My new awesome title"
-          subtitle="And my cool subtitle"
+          title="Chatbot"
+          subtitle="Lets talk samrtly"
         />
       </div>
     );
