@@ -168,11 +168,11 @@ class Header extends Component{
                         {
                                     (this.props.auth.isAuthenticated && this.props.auth.userinfo&& !this.props.auth.userinfo.admin)?(
                                 <React.Fragment>
-                                {/* <NavItem className="ml-2" onClick={this.toggleNav}>
-                                   <NavLink className="nav-link white-text" to="/fines">
-                                      <span className="fa fa-ban   " /> Fines
+                                <NavItem className="ml-2" onClick={this.toggleNav}>
+                                   <NavLink className="nav-link white-text" to="/wallet">
+                                      <span className="fa fa-inr   " /> Wallet
                                      </NavLink>
-                                </NavItem> */}
+                                </NavItem>
                                  <NavItem className="ml-2" onClick={this.toggleNav}>
                                  <NavLink className="nav-link white-text" to="/upload_product">
                                     <span className="fa fa-upload   "/> Upload item
