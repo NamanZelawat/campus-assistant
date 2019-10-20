@@ -101,8 +101,8 @@ class Header extends Component{
                                <span className="fa fa-home   "/> Home
                            </NavLink>
                         </NavItem>
-                                <NavItem className="ml-2" onClick={this.toggleNav}>
-                                    <NavLink className="nav-link white-text" to="/canteens">
+                                {/* <NavItem className="ml-2" onClick={this.toggleNav}>
+                                    <NavLink className="nav-link white-text" to="/products">
                                         <span className="fa fa-cutlery   " /> Canteens
                            </NavLink>
                                 </NavItem>
@@ -115,10 +115,10 @@ class Header extends Component{
                                         </div>
                                     </DropdownToggle>
                                     <DropdownMenu>
-                                        <DropdownItem onClick={this.toggleNav} tag={Link} to="/books">Inside campus</DropdownItem>
-                                        <DropdownItem onClick={this.toggleNav} tag={Link} to="/bicycles" >Outside</DropdownItem>
+                                        <DropdownItem onClick={this.toggleNav} tag={Link} to="/products">Inside campus</DropdownItem>
+                                        <DropdownItem onClick={this.toggleNav} tag={Link} to="/products" >Outside</DropdownItem>
                                     </DropdownMenu>
-                        </Dropdown>
+                        </Dropdown> */}
                         <Dropdown  isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                             <DropdownToggle color="white">
                             <div className="white-text">
@@ -168,21 +168,21 @@ class Header extends Component{
                         {
                                     (this.props.auth.isAuthenticated && this.props.auth.userinfo&& !this.props.auth.userinfo.admin)?(
                                 <React.Fragment>
-                                <NavItem className="ml-2" onClick={this.toggleNav}>
+                                {/* <NavItem className="ml-2" onClick={this.toggleNav}>
                                    <NavLink className="nav-link white-text" to="/fines">
                                       <span className="fa fa-ban   " /> Fines
                                      </NavLink>
-                                </NavItem>
+                                </NavItem> */}
                                  <NavItem className="ml-2" onClick={this.toggleNav}>
                                  <NavLink className="nav-link white-text" to="/upload_product">
                                     <span className="fa fa-upload   "/> Upload item
                                  </NavLink>
                                  </NavItem>
-                                 <NavItem className="ml-2" onClick={this.toggleNav}>
+                                 {/* <NavItem className="ml-2" onClick={this.toggleNav}>
                                  <NavLink className="nav-link white-text" to="/uploads">
                                     <span className="fa fa-list   "/> My uploads
                                  </NavLink>
-                                 </NavItem>
+                                 </NavItem> */}
                                  </React.Fragment>
 
                             ):
@@ -223,7 +223,7 @@ class Header extends Component{
                                         :
                                         <div>
                                         <div className="navbar-text white-text mr-1">{this.props.auth.user.username}</div>
-                                        <Button outline color="primary" onClick={this.handleLogout}>
+                                        <Button color="info" onClick={this.handleLogout}>
                                             <span className="fa fa-sign-out   "></span> Logout
                                             {this.props.auth.isLoading ?
                                                 <span className="fa fa-spinner fa-pulse fa-fw"></span>
