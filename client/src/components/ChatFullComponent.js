@@ -84,6 +84,7 @@ class ChatFull extends Component {
           profileAvatar={logo}
           title="Chatbot"
           subtitle="Lets talk smartly"
+          badge
         />
       </div>
     );
