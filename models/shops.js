@@ -5,7 +5,7 @@ var passportLocalMongoose = require('passport-local-mongoose');
 var Shops = new Schema({
     name: {
         type: String,
-          required: true,      
+          required: true,
     },
     phone: {
         type: Number,
@@ -24,5 +24,4 @@ var Shops = new Schema({
 }
 );
 
-User.plugin(passportLocalMongoose);
 module.exports = mongoose.model('Shops', Shops);
