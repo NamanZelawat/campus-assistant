@@ -7,7 +7,6 @@ var authenticate = require("./authenticate");
 require("dotenv").config();
 
 // Loading routers
-<<<<<<< HEAD
 const productRouter = require('./routes/api/productRouter');
 const userRouter = require('./routes/api/userRouter');
 const bidRouter = require('./routes/api/bidRouter');
@@ -15,13 +14,6 @@ var favoriteRouter = require('./routes/api/favoriteRouter');
 const shop = require('./routes/api/shop');
 const canteen = require('./routes/api/canteen')
 const ask = require('./routes/api/ask');
-=======
-const productRouter = require("./routes/api/productRouter");
-const userRouter = require("./routes/api/userRouter");
-const bidRouter = require("./routes/api/bidRouter");
-var favoriteRouter = require("./routes/api/favoriteRouter");
-const ask = require("./routes/api/ask");
->>>>>>> b77f67f31c562b016c75ac8c6049b123627aea11
 
 (DEFAULT_BODY_SIZE_LIMIT = 1024 * 1024 * 10), (DEFAULT_PARAMETER_LIMIT = 10000);
 
@@ -66,7 +58,6 @@ mongoose
 app.use(passport.initialize());
 
 // Use routes
-<<<<<<< HEAD
 app.use('/api/products',productRouter);
 app.use('/api/users',userRouter);
 app.use('/api/bids',bidRouter);
@@ -74,14 +65,6 @@ app.use('/api/favorites',favoriteRouter);
 app.use('/api/',ask);
 app.use('/api/shop',shop);
 app.use('/api/canteen',canteen);
-=======
-app.use("/api/products", productRouter);
-
-app.use("/api/users", userRouter);
-app.use("/api/bids", bidRouter);
-app.use("/api/favorites", favoriteRouter);
-app.use("/api/", ask);
->>>>>>> b77f67f31c562b016c75ac8c6049b123627aea11
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
