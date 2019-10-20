@@ -24,5 +24,5 @@ var Shops = new Schema({
 }
 );
 
-User.plugin(passportLocalMongoose);
+// User.plugin(passportLocalMongoose);
 module.exports = mongoose.model('Shops', Shops);
