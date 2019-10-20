@@ -8,9 +8,9 @@ import {
 
 import "react-chat-widget/lib/styles.css";
 
-import logo from "./logo.svg";
+import logo from "../images/avatar.jpeg";
 
-class App extends Component {
+class Chat extends Component {
   componentDidMount() {
     addResponseMessage("Welcome to this awesome chat!");
   }
@@ -67,4 +67,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Chat;
