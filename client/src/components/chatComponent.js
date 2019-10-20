@@ -13,8 +13,6 @@ import { baseUrl } from "../redux/baseUrl";
 
 import logo from "../images/avatar.jpeg";
 
-import"./max.css";
-
 class Chat extends Component {
   componentDidMount() {
     // addResponseMessage("Welcome to this awesome chat!");
