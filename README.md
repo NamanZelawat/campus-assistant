@@ -30,6 +30,15 @@ The fun doesn't stop here, you can bid on various items get exciting items at mi
 Don't worry about the interface, we provide you a bot that can chat. It can provide you any information about college and surrounding. Whether you want to check whether a canteen is open or not or the same query about admin office. The bot provides you all the answers. Even those which can take 3-5 years of experience to get the right answer. It can book your meals, pay your bills , can set as well as pay the payment reminders.
 Everything you need in a college is right here in front of you.
 
+## Some sample things which can ask our chatbot UNA currently-
+
+Try something like
+
+* where can i get maggi
+* i want to make a bonafide certificate
+* give me 3rd sem cse schedule
+* phone number of ck sir
+
 ## User Permissions
 
 ### Student
