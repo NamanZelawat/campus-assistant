@@ -5,17 +5,17 @@ var passportLocalMongoose = require('passport-local-mongoose');
 var Canteen = new Schema({
     name: {
         type: String,
-          required: true,      
+          required: true,
     },
     phone: {
-        type: Number,
+        type: String,
         minlength: 9,
         maxlength: 10
     },
     address:{
       type: String,
-      required: true,      
-  
+      required: true,
+
     },
     owner:{
         type: mongoose.Schema.Types.ObjectId,

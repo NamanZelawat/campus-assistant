@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ea16473a.chunk.css",
+    "main.js": "/static/js/main.38dfd063.chunk.js",
+    "main.js.map": "/static/js/main.38dfd063.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.aff179b5.chunk.css": "/static/css/2.aff179b5.chunk.css",
+    "static/js/2.e5cc7b1d.chunk.js": "/static/js/2.e5cc7b1d.chunk.js",
+    "static/js/2.e5cc7b1d.chunk.js.map": "/static/js/2.e5cc7b1d.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.6b6133c13d01b779d5234d5037b21a53.js": "/precache-manifest.6b6133c13d01b779d5234d5037b21a53.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.aff179b5.chunk.css.map": "/static/css/2.aff179b5.chunk.css.map",
+    "static/css/main.ea16473a.chunk.css.map": "/static/css/main.ea16473a.chunk.css.map",
+    "static/media/Wallpaper_1.jpg": "/static/media/Wallpaper_1.24c5e005.jpg",
+    "static/media/Wallpaper_2.jpg": "/static/media/Wallpaper_2.109bf96c.jpg",
+    "static/media/Wallpaper_3.jpg": "/static/media/Wallpaper_3.c511a19b.jpg",
+    "static/media/font-awesome.css": "/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/App.css": "/static/media/wallpaper.e6988cb8.jpeg"
+  }
+}
