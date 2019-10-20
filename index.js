@@ -26,17 +26,6 @@ const app = express();
 
 app.use(bodyParser.json(bodyParserJsonConfig()));
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-
-  next();
-});
-
 // Bodyparser Middleware
 app.use(bodyParser.json());
 
@@ -54,6 +43,15 @@ mongoose
     console.log("MongoDB Connected");
   })
   .catch(err => console.log(err));
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 app.use(passport.initialize());
 
@@ -62,10 +60,10 @@ app.use("/api/products", productRouter);
 app.use("/api/users", userRouter);
 app.use("/api/bids", bidRouter);
 app.use("/api/favorites", favoriteRouter);
-app.use("/api/", ask);
+app.use("/api/ask", ask);
 app.use("/api/shop", shop);
 app.use("/api/canteen", canteen);
-app.use("/api/", ask);
+// app.use("/api/", ask);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {

@@ -101,7 +101,7 @@ class Header extends Component{
                                <span className="fa fa-home   "/> Home
                            </NavLink>
                         </NavItem>
-                                {/* <NavItem className="ml-2" onClick={this.toggleNav}>
+                                <NavItem className="ml-2" onClick={this.toggleNav}>
                                     <NavLink className="nav-link white-text" to="/products">
                                         <span className="fa fa-cutlery   " /> Canteens
                            </NavLink>
@@ -118,7 +118,7 @@ class Header extends Component{
                                         <DropdownItem onClick={this.toggleNav} tag={Link} to="/products">Inside campus</DropdownItem>
                                         <DropdownItem onClick={this.toggleNav} tag={Link} to="/products" >Outside</DropdownItem>
                                     </DropdownMenu>
-                        </Dropdown> */}
+                        </Dropdown>
                         <Dropdown  isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                             <DropdownToggle color="white">
                             <div className="white-text">
@@ -178,11 +178,11 @@ class Header extends Component{
                                     <span className="fa fa-upload   "/> Upload item
                                  </NavLink>
                                  </NavItem>
-                                 {/* <NavItem className="ml-2" onClick={this.toggleNav}>
+                                 <NavItem className="ml-2" onClick={this.toggleNav}>
                                  <NavLink className="nav-link white-text" to="/uploads">
                                     <span className="fa fa-list   "/> My uploads
                                  </NavLink>
-                                 </NavItem> */}
+                                 </NavItem>
                                  </React.Fragment>
 
                             ):

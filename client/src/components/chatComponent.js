@@ -11,7 +11,8 @@ import "react-chat-widget/lib/styles.css";
 
 import logo from "../images/avatar.jpeg";
 
-const baseUrl = "https://localhost:5000/";
+import { baseUrl } from "../baseUrl";
+// const baseUrl = "http://localhost:5000/";
 
 class Chat extends Component {
   componentDidMount() {
