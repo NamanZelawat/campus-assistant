@@ -445,6 +445,9 @@ class Main extends Component {
                       editUser={this.props.editUser}
                       editPassword={this.props.editPassword}/>}
                       />
+          <PrivateRouteCommon exact path='/wallet' component={() => <Profile
+            auth={this.props.auth}
+          />}/>
                       <PrivateRoute exact path='/upload_product' component={() =>(
                       <UploadItem
                       isAdmin={(this.props.auth.userinfo==null)?false:(this.props.auth.userinfo.admin)}

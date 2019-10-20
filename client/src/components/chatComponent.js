@@ -9,9 +9,10 @@ import {
 
 import "react-chat-widget/lib/styles.css";
 
-import { baseUrl } from "../redux/baseUrl";
-
 import logo from "../images/avatar.jpeg";
+
+import { baseUrl } from "../baseUrl";
+// const baseUrl = "http://localhost:5000/";
 
 class Chat extends Component {
   componentDidMount() {
@@ -71,7 +72,7 @@ class Chat extends Component {
         // // return )
       })
       .catch(error => {
-        alert("Product could not be bidd\nError: " + error.message + "\n");
+        alert("\nError: " + error.message + "\n");
       });
   };
   render() {
