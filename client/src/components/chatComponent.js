@@ -56,13 +56,12 @@ class Chat extends Component {
         }
       )
       .then(response => response.json())
-
       .then(response => {
         console.log(response.result);
         if (response.result.output.generic[0].response_type === "text") {
           addResponseMessage(response.result.output.generic[0].text);
         } else {
-          renderCustomComponent(() => (
+                    renderCustomComponent(() => (
             <img src={response.result.output.generic[0].source} />
           ));
         }
