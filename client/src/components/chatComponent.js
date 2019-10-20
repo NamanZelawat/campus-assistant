@@ -35,7 +35,7 @@ class Chat extends Component {
         "Content-Type": "application/json"
         // 'Authorization': bearer
       },
-      credentials: "cross-origin"
+      credentials: "same-origin"
     })
       .then(
         response => {
