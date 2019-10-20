@@ -11,6 +11,8 @@ const productRouter = require('./routes/api/productRouter');
 const userRouter = require('./routes/api/userRouter');
 const bidRouter = require('./routes/api/bidRouter');
 var favoriteRouter = require('./routes/api/favoriteRouter');
+const shop = require('./routes/api/shop');
+const canteen = require('./routes/api/canteen')
 const ask = require('./routes/api/ask');
 
   DEFAULT_BODY_SIZE_LIMIT = 1024 * 1024 * 10,
@@ -50,11 +52,12 @@ app.use(passport.initialize());
 
 // Use routes
 app.use('/api/products',productRouter);
-
 app.use('/api/users',userRouter);
 app.use('/api/bids',bidRouter);
 app.use('/api/favorites',favoriteRouter);
 app.use('/api/',ask);
+app.use('/api/shop',shop);
+app.use('/api/canteen',canteen);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
