@@ -23,30 +23,30 @@ class UploadItem extends Component {
         this.state={
             bid: false,
             images: [],
-            imageFiles:[] 
+            imageFiles:[]
         }
         this.onDrop = this.onDrop.bind(this);
     }
-    
+
     onDrop(image) {
         console.log(image)
         this.setState({
             images: this.state.images.concat(image),
         });
     }
- 
+
     componentDidMount() {
         window.scrollTo(0, 0)
     }
 
-   
+
 render(){
     let uniqueName=(val) =>(!this.props.products.some((product)=>(product.name===val)));
 
     if (this.props.productsLoading) {
         return(
             <div className="container">
-                <div className="row">            
+                <div className="row">
                     <Loading />
                 </div>
             </div>
@@ -54,8 +54,8 @@ render(){
     }
     else if (this.props.productsErrMess) {
         return(
-            <div className="container loading  white-text">
-                <div className="row heading"> 
+            <div className="container loading  ">
+                <div className="row heading">
                     <div className="col-12">
                         <br/><br/><br/><br/>
                         <h3>{this.props.productsErrMess}</h3>
@@ -66,7 +66,7 @@ render(){
     }
     else
  return (
-    <div className="container  white-text">
+    <div className="container  ">
     <div className="row justify-content-center heading">
     <div className="col-12">
   <h3 align="center">  Upload a product</h3>
@@ -74,11 +74,11 @@ render(){
     </div>
     <div className="row row-content justify-content-center">
     <LocalForm onSubmit={(values) => {
-        
+
         if((values.bid&&(Number(values.max_bid)>Number(values.price))&&(Number(values.incr)<=Number(values.max_bid-values.price)/2))||(!values.bid))
         {
             var input = document.querySelector('input[type="file"]');
-            this.props.postProduct(values.name, values.cat, values.description, values.price, values.bid, values.max_bid, values.incr,input.files);            
+            this.props.postProduct(values.name, values.cat, values.description, values.price, values.bid, values.max_bid, values.incr,input.files);
         }
         else if(Number(values.max_bid)<Number(values.price))
         {
@@ -115,14 +115,14 @@ render(){
                             <Control.select model=".cat" name="cat" id="cat" className="form-control" defaultValue="Stationary">
                               <option>Stationary</option> <option>Electronic Gadgets</option>
                               <option>Bicycles</option> <option>Clothes</option>
-                              <option>Sports</option> <option>Books</option> 
+                              <option>Sports</option> <option>Books</option>
                               <option>Others</option>
                                </Control.select>
                             </Col>
                             </Row>
-                            <Row className="form-group">                   
+                            <Row className="form-group">
                             <Col md={4}>
-                            <Control.checkbox model=".bid" id="bid" name="bid" 
+                            <Control.checkbox model=".bid" id="bid" name="bid"
                             className="form-control" disabled={false}
                             checked={this.state.bid}
                             defaultChecked={this.state.bid}
@@ -245,8 +245,8 @@ render(){
                 withPreview
                 className="uploader"
                 name="images"
-            />         
-            </Row>   
+            />
+            </Row>
                         <Row className="form-group">
                                 <Label htmlFor="description" md={2}>Description</Label>
                                 <Col md={10}>
