@@ -9,9 +9,9 @@ import {
 
 import "react-chat-widget/lib/styles.css";
 
-import { baseUrl } from "../redux/baseUrl";
-
 import logo from "../images/avatar.jpeg";
+
+const baseUrl = "https://localhost:5000/";
 
 class Chat extends Component {
   componentDidMount() {
@@ -35,7 +35,7 @@ class Chat extends Component {
         "Content-Type": "application/json"
         // 'Authorization': bearer
       },
-      credentials: "same-origin"
+      credentials: "cross-origin"
     })
       .then(
         response => {
