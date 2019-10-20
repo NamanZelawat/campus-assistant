@@ -16,7 +16,7 @@ import {Modal,ModalBody,ModalHeader,Button, Label, Col, Row} from 'reactstrap';
 import { postProduct, fetchProducts, editBid, editProduct, deleteProduct, increaseView, loginUser, logoutUser,
   registerUser, editUser, editPassword, postBid, approveProduct, fetchBids, fetchUsers, fetchFavorites, postFavorite, deleteFavorite} from '../redux/ActionCreators';
 import { Control, LocalForm, Errors  } from 'react-redux-form';
-import Shops from './ShopsComponent.js/index.js';
+import Shops from './ShopsComponent.js';
 
 const required = (val) => val && val.length;
 const requiredNum = (val) => !!(val);
