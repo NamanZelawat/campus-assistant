@@ -144,7 +144,7 @@ class Header extends Component{
                         </NavItem>
                                 <NavItem className="ml-2" onClick={this.toggleNav}>
                                     <NavLink className="nav-link white-text" to="/chatbot">
-                                        <span className="fa fa-question   " /> Live help
+                                        <span className="fa fa-question   " /> UNA
                            </NavLink>
                                 </NavItem>
 

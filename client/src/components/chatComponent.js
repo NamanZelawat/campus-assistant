@@ -49,7 +49,10 @@ class Chat extends Component {
             throw error;
       })
     .then(response => response.json())
-    .then(response => {     addResponseMessage(response.result.output.generic.response_type==="text"?response.result.output.generic.text:("View this image : "+response.result.output.generic.source));
+
+    .then(response => {    
+      console.log(response.result);
+       addResponseMessage(response.result.output.generic[0].response_type==="text"?response.result.output.generic[0].text:("View this image : "+response.result.output.generic[0].source));
       // return )
     })
     .catch(error =>  {
