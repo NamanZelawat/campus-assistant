@@ -17,6 +17,7 @@ import { postProduct, fetchProducts, editBid, editProduct, deleteProduct, increa
   registerUser, editUser, editPassword, postBid, approveProduct, fetchBids, fetchUsers, fetchFavorites, postFavorite, deleteFavorite} from '../redux/ActionCreators';
 import { Control, LocalForm, Errors  } from 'react-redux-form';
 import Shops from './ShopsComponent.js';
+import Chat from './chatComponent.js';
 
 const required = (val) => val && val.length;
 const requiredNum = (val) => !!(val);
@@ -347,6 +348,10 @@ class Main extends Component {
                       }
                       postFavorite={this.props.postFavorite}
 />}/>
+
+<Route exact path='/chatbot' component={() => <Chat
+            postText={this.props.postText}
+          />} />
 
 <Route exact path='/electronics' component={() => <Products
                       products={this.props.products.products.filter((product)=>(product.cat==="Electronic Gadgets"&&product.approved))}
@@ -702,4 +707,3 @@ class Main extends Component {
     }
 
     export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Main));
-
