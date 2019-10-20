@@ -12,6 +12,8 @@ import {baseUrl} from '../redux/baseUrl';
 
 import logo from "../images/avatar.jpeg";
 
+import"./max.css";
+
 class Chat extends Component {
   componentDidMount() {
     // addResponseMessage("Welcome to this awesome chat!");
@@ -65,7 +67,7 @@ class Chat extends Component {
           handleNewUserMessage={this.handleNewUserMessage}
           profileAvatar={logo}
           title="Chatbot"
-          subtitle="Lets talk samrtly"
+          subtitle="Lets talk smartly"
         />
       </div>
     );
