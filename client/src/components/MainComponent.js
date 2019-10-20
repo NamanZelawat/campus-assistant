@@ -17,7 +17,9 @@ import { postProduct, fetchProducts, editBid, editProduct, deleteProduct, increa
   registerUser, editUser, editPassword, postBid, approveProduct, fetchBids, fetchUsers, fetchFavorites, postFavorite, deleteFavorite} from '../redux/ActionCreators';
 import { Control, LocalForm, Errors  } from 'react-redux-form';
 import Shops from './ShopsComponent.js';
-import Chat from './chatComponent.js';
+import Chat from './ChatFullComponent.js';
+import Wallet from './Wallet.js';
+import ChatFull from './ChatFullComponent.js';
 
 const required = (val) => val && val.length;
 const requiredNum = (val) => !!(val);
@@ -349,7 +351,7 @@ class Main extends Component {
                       postFavorite={this.props.postFavorite}
 />}/>
 
-<Route exact path='/chatbot' component={() => <Chat
+<Route exact path='/chatbot' component={() => <ChatFull
             postText={this.props.postText}
           />} />
 
@@ -445,7 +447,7 @@ class Main extends Component {
                       editUser={this.props.editUser}
                       editPassword={this.props.editPassword}/>}
                       />
-          <PrivateRouteCommon exact path='/wallet' component={() => <Profile
+          <PrivateRouteCommon exact path='/wallet' component={() => <Wallet
             auth={this.props.auth}
           />}/>
                       <PrivateRoute exact path='/upload_product' component={() =>(

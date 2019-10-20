@@ -8,7 +8,7 @@ import {
 } from "react-chat-widget";
 
 import "react-chat-widget/lib/styles.css";
-
+// import "./chat-styles.css";
 import logo from "../images/avatar.jpeg";
 
 import { baseUrl } from "../baseUrl";
@@ -83,7 +83,7 @@ class Chat extends Component {
           handleNewUserMessage={this.handleNewUserMessage}
           profileAvatar={logo}
           title="Chatbot"
-          subtitle="Lets talk samrtly"
+          subtitle="Lets talk smartly"
         />
       </div>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Chat from "./ChatComponent";
 class Footer extends Component {
   constructor(props) {
     super(props);
@@ -8,9 +8,12 @@ class Footer extends Component {
 
   render() {
     return (
-      <p className="footer" align="center">
-        © Copyright 2019 Team Wreckers IIT (ISM){" "}
-      </p>
+      <React.Fragment>
+        <p className="footer" align="center">
+          © Copyright 2019 Team Wreckers IIT (ISM){" "}
+        </p>
+        <Chat style={{ zIndex: 10000 }} />
+      </React.Fragment>
     );
   }
 }

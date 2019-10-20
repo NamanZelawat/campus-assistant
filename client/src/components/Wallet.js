@@ -65,6 +65,7 @@ class Wallet extends Component {
       <div className="container mt-6 home text-center align-self-center">
         <div className="row text-center justify-content-center mt-2">
           <Card className="heading">
+            <br />
             <CardHeader>
               <h3>My Wallet</h3>
             </CardHeader>
@@ -74,7 +75,8 @@ class Wallet extends Component {
                   {" "}
                   Account ID : {"          " + this.props.auth.userinfo._id}
                 </h5>
-                <h5>
+                <h5> Balance : 0</h5>
+                {/* <h5>
                   {" "}
                   Facebook Profile Link :{" "}
                   <a
@@ -90,20 +92,22 @@ class Wallet extends Component {
                   " (Publicly Visible)"
                 ) : (
                   <React.Fragment />
-                )}
+                )} */}
               </CardText>
-              <Button color="info" onClick={this.toggleEditModal}>
-                Add &nbsp;{"   "}
-                <span className="fa fa-pencil" />
-              </Button>{" "}
-              {this.props.auth.userinfo.admin ? (
+              {
+                <Button color="info" onClick={this.toggleEditModal}>
+                  Add Money&nbsp;{"   "}
+                  {/* <span className="fa fa-pencil" /> */}
+                </Button>
+              }{" "}
+              {/*this.props.auth.userinfo.admin ? (
                 <div />
               ) : (
                 <Button color="info" onClick={this.togglePasswordModal}>
                   Change Password &nbsp;{"   "}
                   <span className="fa fa-key" />
-                </Button>
-              )}
+                </Button> */}
+              {/* )} */}
             </CardBody>
           </Card>
         </div>
