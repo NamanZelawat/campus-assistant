@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/NamanZelawat/campus-assistant#readme",
   "dependencies": {
-    "aws-sdk": "^2.503.0",
+    "aws-sdk": "^2.814.0",
     "body-parser": "^1.19.0",
     "concurrently": "^5.0.0",
     "cors": "^2.8.5",
